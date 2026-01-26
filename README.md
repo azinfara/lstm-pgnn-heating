@@ -422,7 +422,7 @@ The model demonstrates strong predictive performance across diverse building typ
 - Requires complete hourly weather and occupancy schedule data (8760 timesteps)
 - Best suited for buildings within the training parameter ranges (see typical ranges in dataset section)
 - Assumes constant setpoint temperature (22°C); dynamic setpoints not modeled
-- Does not explicitly model thermal mass dynamics or multi-zone effects
+- It should be used during the early stage design, not for actual sizing of the equipments
 - Occupancy schedules must be provided as input (not predicted)
 
 ## Model Interpretability
