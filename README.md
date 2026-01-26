@@ -206,7 +206,7 @@ This ensures the model performs well across the full range of operating conditio
 
 \# Clone the repository
 
-git clone https://github.com/yourusername/lstm-pgnn-heating.git
+git clone https://github.com/azinfara/lstm-pgnn-heating.git
 
 cd lstm-pgnn-heating
 
@@ -865,6 +865,8 @@ The δ values show where data-driven learning adds value beyond physics:
 \- \*\*Moderate corrections (0.1 < |δ| < 0.3)\*\*: Normal adjustment for unmodeled effects
 
 \- \*\*Large corrections (|δ| > 0.5)\*\*: May indicate missing physics, poor parameters, or unique building behavior
+
+
 
 
 
