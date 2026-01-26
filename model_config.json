@@ -1,0 +1,87 @@
+{
+  "name": "Baseline",
+  "description": "LSTM-PGNN v2.2 Baseline configuration with single-layer LSTM",
+  "version": "2.2",
+  "model_class": "LSTMPGNNHeatingV2_2_Enhanced",
+  "model_file": "lstm_pgnn_v2_2_baseline.pt",
+  
+  "architecture": {
+    "ts_dim": 8,
+    "static_dim": 27,
+    "hidden_lstm": 64,
+    "num_layers": 1,
+    "bidirectional": false,
+    "dropout": 0.0
+  },
+  
+  "physics_parameters": {
+    "setpoint": 22.0,
+    "correction_cap": 5.0,
+    "exposure_factor": 20.0,
+    "ua_multiplier": 1.2,
+    "schedule_weight": 1.0
+  },
+  
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 1e-05,
+    "batch_size": 4,
+    "epochs": 40,
+    "patience": 6,
+    "loss_function": "peak_weighted_mse",
+    "lambda_delta": 0.001,
+    "lambda_kreg": 0.001
+  },
+  
+  "data_info": {
+    "time_series_features": [
+      "Outdoor_Temperature",
+      "Solar_Radiation",
+      "Outdoor_Humidity",
+      "Hour",
+      "DayOfWeek",
+      "Month",
+      "IsWeekend",
+      "Schedule"
+    ],
+    "static_numeric_features": [
+      "Total_Area",
+      "Total_Volume",
+      "HRUefficiency",
+      "Total_int_gain",
+      "ExtWin_U",
+      "ExtWin_g",
+      "WWR",
+      "Q50",
+      "ShadingRate",
+      "Number_of_AHU",
+      "Max_airflow",
+      "ExtWall_U",
+      "ExtWall_Area"
+    ],
+    "static_categorical_features": [
+      "Type",
+      "Orientation"
+    ],
+    "target": "Hourly_Heating_Demand_kW",
+    "timesteps": 8760
+  },
+  
+  "preprocessing": {
+    "time_series_scaler": "MinMaxScaler",
+    "static_numeric_scaler": "StandardScaler",
+    "target_scaler": "StandardScaler",
+    "categorical_encoding": "OneHotEncoder"
+  },
+  
+  "performance": {
+    "total_parameters": 45000,
+    "inference_time_per_building": "~0.1s",
+    "test_rmse": 49.74,
+    "test_mae": 28.83,
+    "test_r2": 0.82,
+    "test_runs": 1159,
+    "test_buildings": 10
+  }
+}

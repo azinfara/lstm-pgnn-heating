@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.idea/
+.vscode/
+
+# Data files (exclude large files, keep sample)
+data/*
+!data/sample/
+data/sample/*.dat
+
+# Full dataset (don't upload)
+processed_Heating_chunks/
+mm_data_pinn_with_schedule/
+*.parquet
+
+# Extracted profiles (if regenerating)
+extracted_profiles/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+*.temp
