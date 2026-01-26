@@ -140,7 +140,7 @@ This ensures the model performs well across the full range of operating conditio
 
 │   ├── schedule/                           # Occupancy schedules
 
-│   ├── weather/                            # Weather data (TRY files)
+│   ├── weather/                            # Weather data
 
 │   ├── metadata\_pinn\_with\_schedule.pkl     # Dataset metadata
 
